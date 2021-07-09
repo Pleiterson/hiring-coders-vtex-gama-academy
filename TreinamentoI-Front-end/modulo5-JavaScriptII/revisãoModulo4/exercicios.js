@@ -9,11 +9,28 @@
 /* Exercício 9: Utilizando os conceitos que estudamos, vamos criar um programa que irá imprimir 'FizzBuzz'
 para números divisíveis por 3 e 5, para números divisíveis por 3 irá imprimir 'Fizz' e para números divisíveis por
 5 irá imprimir 'Buzz' e por fim, se não cumprir nenhum dos casos acima imprime o próprio número. */
+let resultado = fizzBuzz(20);
+console.log(resultado);
+
+function fizzBuzz(entrada) {
+  // verifica se o valor de entrada é um número ou outro tipo de dado
+  if (typeof entrada !== "number") {
+    return "Não é um número";
+  } else if ((entrada % 3 === 0) && (entrada % 5 === 0)) {
+    return "FizzBuzz";
+  } else if (entrada % 3 === 0) {
+    return "Fizz";
+  } else if (entrada % 5 === 0) {
+    return "Buzz";
+  }
+
+  return entrada;
+}
+// -------------------------------------------------------------------------------------------------------------------
 // Exercício 10: Utilizando os conceitos que estudamos, vamos criar um programa que irá nos informar os dias de aula para a nossa turma.
 // Exercício 11: Vamos criar uma função que calcula o IMC de uma pessoa, dado a altura em m e a massa em kg.
 // Exercício 12: Crie uma função que determina se um número é par ou impar.
 // Exercício 13: Faça um programa que dado um número, imprime no (console.log) a tabuada do mesmo de 1 a 10.
-
 // Exercício 14: Imprima na tela os números pares existentes entre 0 e 100.
 let cont = 0;
 while (cont <= 100) {
@@ -21,9 +38,15 @@ while (cont <= 100) {
     console.log(cont);
   cont++;
 }
-
 // -------------------------------------------------------------------------------------------------------------------
 // Exercício 15: Crie uma função que recebe uma temperatura em graus celsius retorna o valor convertido em Fahrenheit.
+function convertToFahrenheit(value) {
+  return (value * 1.8) + 32;
+}
+
+let res = convertToFahrenheit(40);
+console.log(`O valor em Fahrenheit é: ${res}`);
+// -------------------------------------------------------------------------------------------------------------------
 // Exercício 16: Crie uma função que irá receber um número e retornar o fatorial dele. por exemplo: 3! = 3 * 2 * 1 // 6
 // Exercício 17: Crie uma função que recebe 2 parâmetros e retorna a multiplicação entre else.
 // Exercício 18: Crie uma função que calcula 5% de desconto retornando o valor do desconto.
@@ -78,6 +101,5 @@ function calculaMedia(n1, n2, n3) {
 console.log(calculaMedia(6, 7, 8)); // Aluno Aprovado
 console.log(calculaMedia(6, 7, 2)); // Aluno em Recuperação
 console.log(calculaMedia(3, 4, 2)); // Aluno Reprovado
-
 // -------------------------------------------------------------------------------------------------------------------
 // Exercício 35: Crie uma função que recebe o ano de nascimento da pessoa informando se ela é maior de idade ou menor.
