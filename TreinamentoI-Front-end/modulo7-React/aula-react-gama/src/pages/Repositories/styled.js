@@ -31,6 +31,7 @@ export const ListItem = styled.li`
   padding: .5rem
 `;
 
+// criando uma constante LinkHome que vai receber a tag <Link> do react-router-dom e dar estilo a ela
 export const LinkHome = styled(Link)`
   display: block;
   width: 4rem;
