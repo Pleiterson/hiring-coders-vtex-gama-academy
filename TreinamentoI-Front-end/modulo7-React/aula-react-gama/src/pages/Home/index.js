@@ -1,12 +1,14 @@
 /* eslint-disable array-callback-return */
 /* eslint-disable no-lone-blocks */
 import React, {useState} from 'react';
+import {useHistory} from 'react-router-dom';
 import axios from 'axios';
 
 import * as S from './styled'; // vai importar tudo que estiver dentro de styled para a variável S
 
 function Home(props) {
   const [usuario, setUsuario] = useState('');
+  const history = useHistory();
 
   function handlePesquisa() {
     // console.log(usuario); // imprime o valor do input
@@ -19,6 +21,7 @@ function Home(props) {
         repoName.push(repository.name); // armazena no array apenas o nome dos repositórios
       });
       localStorage.setItem('repoName', JSON.stringify(repoName)); // armazendo o repoName no localStorage do navegador
+      history.push('/repositories'); // salvando os dados no useHistory() e chamando a página repositories
     });
   }
 
