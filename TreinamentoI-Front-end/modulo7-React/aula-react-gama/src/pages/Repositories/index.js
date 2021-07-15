@@ -20,6 +20,7 @@ function Repositories() {
     <S.Container>
       {/* acessando Title de styled através da variável S. Title é uma tag <h1> como definido em styled */}
       <S.Title>Repositórios</S.Title>
+      <S.LinkHome to="/">Voltar</S.LinkHome>
       <S.List>
         {/* mapenando todo o nosso array dos repositórios */}
         {repositories.map(repository => {
