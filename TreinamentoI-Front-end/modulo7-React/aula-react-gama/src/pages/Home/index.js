@@ -1,7 +1,11 @@
+/* eslint-disable no-lone-blocks */
 import React, {useState} from 'react';
 import axios from 'axios';
 
-function App(props) {
+import Repositories from '../Repositories';
+import * as S from './styled'; {/* vai importar tudo que estiver dentro de styled para a variável S */}
+
+function Home() {
   const [usuario, setUsuario] = useState('');
 
   function handlePesquisa() {
@@ -11,14 +15,16 @@ function App(props) {
   }
 
   return (
-    <>
+    <S.Container>
       {/* onChange pega o que foi digitado no input e inclui no value através do useState */}
-      <input className="usuarioInput" placeholder="Usuário" value={usuario} onChange={res => setUsuario(res.target.value)}/>
+      <S.Input className="usuarioInput" placeholder="Usuário" value={usuario} onChange={res => setUsuario(res.target.value)}/>
 
       {/* onclick chama a função handlePesquisa */}
-      <button type="button" onClick={handlePesquisa}>Pesquisar</button>
-    </>
+      <S.Button type="button" onClick={handlePesquisa}>Pesquisar</S.Button>
+
+      <Repositories />
+    </S.Container>
   );
 }
 
-export default App;
+export default Home;
